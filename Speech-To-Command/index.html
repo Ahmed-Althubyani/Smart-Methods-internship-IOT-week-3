@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speech To Text</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(60deg, #15217d, #ab4ede) fixed;
+        color: white;
+        text-align: center;
+        padding: 0 10px 10px 10px;
+        font-family: "Poppins", sans-serif;
+      }
+      button {
+        background: #ab4ede;
+        border-radius: 5px;
+        border-width: 0;
+        width: 200px;
+        font-size: 25px;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        margin: 0 5px 0 5px;
+      }
+      button:hover {
+        background: #15217d;
+      }
+      .disabled {
+        pointer-events: none;
+        background: #15217d;
+      }
+      #textbox {
+        background-color: white;
+        min-height: 100px;
+        width: 95%;
+        display: inline-block;
+        padding: 15px;
+        text-align: left;
+        vertical-align: top;
+        border-radius: 10px;
+        margin: 20px 0 10px 0;
+      }
+      #text {
+        color: black;
+        font-size: 22px;
+        text-align: right;
+      }
+      #connect {
+        margin-top: 20px;
+      }
+      #order {
+        padding: 0;
+        width: fit-content;
+        margin: 20px auto;
+        border-radius: 10px;
+        background: #ab4ede;
+      }
+      #left {
+        font-size: 25px;
+        display: inline-block;
+        padding: 20px 80px;
+        border-radius: 10px;
+      }
+      #right {
+        font-size: 25px;
+        display: inline-block;
+        padding: 20px 80px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Speech To Text</h1>
+      <button class="disabled" id="ar" onclick="ar()" disabled>Arabic</button>
+      <button class="enabled" id="en" onclick="en()">Engilish</button>
+      <br />
+      <button id="connect">Connect</button>
+      <div id="textbox">
+        <p id="text"></p>
+      </div>
+      <p>Say Right or Left in the choosen language to move</p>
+      <div id="order">
+        <div id="left">
+          <h1>Left</h1>
+        </div>
+        <div id="right">
+          <h1>Right</h1>
+        </div>
+      </div>
+      <div>
+        <button
+          class="disabled"
+          id="start-btn"
+          onclick="recognition.start()"
+          disabled
+        >
+          Start
+        </button>
+        <button
+          class="disabled"
+          id="stop-btn"
+          onclick="recognition.stop()"
+          disabled
+        >
+          Stop
+        </button>
+      </div>
+      <p id="instructions">Connect to a device to start</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
